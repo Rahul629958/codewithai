@@ -1,0 +1,67 @@
+{
+  "name": "codewithai",
+  "displayName": "CodeWithAI",
+  "description": "Code and debug with AI to ease your coding struggles",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.81.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./extension.js",
+  "views": {
+    "activitybar": [
+        {
+            "id": "codewithai.getAIresponse",
+            "name": "CodeWithAI",
+            "icon": "./AI_icon.png"
+        }
+    ]
+},
+"menus": {
+  "menubar": [
+      {
+          "menu": "View",
+          "group": "navigation",
+          "command": "codewithai.getAIresponse"
+      }
+  ],
+  "editor/context": [
+      {
+          "command": "codewithai.getAIresponse",
+          "group": "navigation",
+          "when": "editorTextFocus"
+      }
+  ]},
+  "contributes": {
+    "commands": [
+      {
+        "command": "codewithai.getAIresponse",
+        "title": "CodeWithAI"
+      }
+    ]
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "node ./test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/glob": "^8.1.0",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "20.2.5",
+    "@types/vscode": "^1.81.0",
+    "@vscode/test-electron": "^2.3.2",
+    "eslint": "^8.41.0",
+    "glob": "^8.1.0",
+    "mocha": "^10.2.0",
+    "typescript": "^5.1.3",
+    "vscode": "^1.1.37"
+  },
+  "dependencies": {
+    "openai": "^3.3.0"
+    
+  }
+}
